@@ -47,7 +47,7 @@ public class PublicationController {
         publicationModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(publicationService.save(publicationModel));
     }
-/*
+/*  Buscando todas as publicações sem padronização [fora do escopo do desafio]
     @GetMapping("/posts")
     public ResponseEntity<Object> findPublication(){
         return ResponseEntity.status(HttpStatus.OK).body(publicationService.findAllPublication());
@@ -83,7 +83,7 @@ public class PublicationController {
         return ResponseEntity.status(HttpStatus.OK).body("Publicação deletada com sucesso!");
     }
 
-    /*listar usuarios*/
+    /*listar usuarios (não faz parte do desafio, só para consultar os dados*/
     @GetMapping("/listUsers")
     public Page<UserModel> listUsers (Pageable pageable){
         return userService.findAllUser(pageable);

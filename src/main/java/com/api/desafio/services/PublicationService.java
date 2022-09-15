@@ -25,12 +25,6 @@ public class PublicationService {
         return publicationRepository.save(publicationModel);
     }
 
-  /*  public Object findAllPublication() {
-            return publicationRepository.findAll();
-
-    }*/
-
-
     public Page<PublicationModel> findAll(Pageable pageable) {
         return publicationRepository.findAll(pageable);
     }
