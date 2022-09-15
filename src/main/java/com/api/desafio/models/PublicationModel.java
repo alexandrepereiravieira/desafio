@@ -13,7 +13,7 @@ public class PublicationModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, unique = true)
     private String title;
 
     @Column(nullable = false)
@@ -22,8 +22,8 @@ public class PublicationModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    @ManyToOne
-    @JoinColumn(name = "User_id")
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private UserModel author;
 
     public UUID getId() {

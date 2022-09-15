@@ -50,21 +50,12 @@ public class UserController {
         userModel.setPassword(encoder.encode(userModel.getPassword()));                         // encriptando a senha
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(userModel));
     }
-
+    /* Listas todos os usuarios, não faz parte do desafio, testando paginação
     @GetMapping("/all")
     public ResponseEntity<Page<UserModel>> findUsers (@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
         return ResponseEntity.status(HttpStatus.OK).body(userService.findAllUser(pageable));
-    }
-
-    /*testando busca
-    @GetMapping("/find/{id}")
-    public ResponseEntity<Object> findById (@PathVariable(value = "id") UUID id){
-        Optional<UserModel> user = userService.findById(id);
-        if (!user.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fudeu Bahia!");
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(user.get());
     }*/
+
 
 
 

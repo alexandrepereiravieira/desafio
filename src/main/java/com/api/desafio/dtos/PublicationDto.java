@@ -1,8 +1,7 @@
 package com.api.desafio.dtos;
 
-
-
 import javax.validation.constraints.NotBlank;
+import java.util.UUID;
 
 public class PublicationDto {
 
@@ -12,8 +11,7 @@ public class PublicationDto {
     @NotBlank
     private String conteudo;
 
-    @NotBlank
-    private String author;
+    private UUID author;
 
     public String getTitle() {
         return title;
@@ -31,11 +29,11 @@ public class PublicationDto {
         this.conteudo = conteudo;
     }
 
-    public String getAuthor() {
+    public UUID getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(UUID author) {
         this.author = author;
     }
 
